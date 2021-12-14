@@ -129,25 +129,16 @@
                     Значение равное 0 отключает ШИМ сигнал.</p>
                     </dd>
                     <dt class="field-odd">Пример кода</dt>
-                    <dd class="field-odd"><blockquote>
-                      <div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
-                          <span class="p">from hub import port</span>
-                          <span class="p">port.A.pwm(50)</span>
-                          <!-- <span class="c1"># Checks if the peak current is too high.</span>
-                          <span class="s1">'peek_current_too_high'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                    <dd class="field-odd"><pre><code class="language-python hljs"><span class="hljs-keyword">from</span> hub <span class="hljs-keyword">import</span> port
+                      <span class="hljs-keyword">from</span> utime <span class="hljs-keyword">import</span> sleep_ms
                       
-                          <span class="c1"># Checks if the current is too high.</span>
-                          <span class="s1">'continous_current_too_high'</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                      portA = port.A
                       
-                          <span class="c1"># The current value in mA.</span>
-                          <span class="s1">'continuous_current'</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
+                      portA.mode(<span class="hljs-number">1</span>)   <span class="hljs-comment"># set full duplex mode </span>
+                      sleep_ms(<span class="hljs-number">1000</span>)  <span class="hljs-comment"># wait for all duplex methods to appear</span>
                       
-                          <span class="c1"># Checks if the hub temperature is too high.</span>
-                          <span class="s1">'temperature_too_high'</span><span class="p">:</span> <span class="kc">False</span>
-                      <span class="p">}</span> -->
-                      </pre></div>
-                      </div>
-                      </div></blockquote>
+                      portA.baud(<span class="hljs-number">115200</span>) <span class="hljs-comment"># set baud rate</span>
+                      </code></pre>
                     </dd>
                     </dl>
                     </dd>
