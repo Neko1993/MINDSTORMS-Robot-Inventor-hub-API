@@ -129,8 +129,9 @@
                     Значение равное 0 отключает ШИМ сигнал.</p>
                     </dd>
                     <dt class="field-odd">Пример кода</dt>
-                    <dd class="field-odd"><pre><code class="language-python hljs"><span class="hljs-keyword">from</span> hub <span class="hljs-keyword">import</span> port
-                      <span class="hljs-keyword">from</span> utime <span class="hljs-keyword">import</span> sleep_ms
+                    <dd class="field-odd"><code class="xref py py-class docutils literal notranslate">
+                      <span class="hljs-keyword">from</span> hub <span class="hljs-keyword">import</span> port
+                      <span class="pre">from</span> utime <span class="hljs-keyword">import</span> sleep_ms
                       
                       portA = port.A
                       
@@ -138,7 +139,7 @@
                       sleep_ms(<span class="hljs-number">1000</span>)  <span class="hljs-comment"># wait for all duplex methods to appear</span>
                       
                       portA.baud(<span class="hljs-number">115200</span>) <span class="hljs-comment"># set baud rate</span>
-                      </code></pre>
+                      </code>
                     </dd>
                     </dl>
                     </dd>
