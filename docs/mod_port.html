@@ -126,10 +126,17 @@
                     <dt class="field-odd">Параметры</dt>
                     <dd class="field-odd"><p><strong>value</strong> – ШИМ значение от -100 до +100.
                     Полярность прикладываемого сиглана соответствует знаку задаваемой величины.
-                    Значение равное 0 отключает ШИМ сигнал и оставляет высокоимпедансное состояние.</p>
+                    Значение равное 0 отключает ШИМ сигнал.</p>
+                    </dd>
+                    <dt class="field-odd">Пример кода</dt>
+                    <dd class="field-odd"><code class="language-python hljs">
+                      <span class="hljs-keyword">from</span> hub <span class="hljs-keyword">import</span> port
+                      port.A.mode(<span class="hljs-number">1</span>) <span class="hljs-comment">## set full duplex mode</span>
+                      </code>
                     </dd>
                     </dl>
-                    </dd></dl>
+                    </dd>
+                  </dl>
                 </div>
                 <div class="section" id="constants">
                   <h2>Константы<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
