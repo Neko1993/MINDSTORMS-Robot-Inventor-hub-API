@@ -2,15 +2,17 @@
 from typing import Callable, Optional, Tuple, Union, overload
 import battery, bluetooth, display, button, motion, port, sound, supervision
 
-__all__ = [
-        'battery',
-        'bluetooth',
-        'display',
-        'button',
-        'motion',
-        'port',
-        'sound'
-        ]
+# __all__ = [
+#         'battery',
+#         'bluetooth',
+#         'display',
+#         'button',
+#         'motion',
+#         'port',
+#         '_Port',
+#         '_Motor',
+#         'sound'
+#         ]
 
 
 TOP = 0
@@ -96,14 +98,18 @@ class Image:
 
     ALL_CLOCKS= (Image('00900:00900:00900:00000:00000:'), Image('00090:00090:00900:00000:00000:'), Image('00000:00099:00900:00000:00000:'), Image('00000:00000:00999:00000:00000:'), Image('00000:00000:00900:00099:00000:'), Image('00000:00000:00900:00090:00090:'), Image('00000:00000:00900:00900:00900:'), Image('00000:00000:00900:09000:09000:'), Image('00000:00000:00900:99000:00000:'), Image('00000:00000:99900:00000:00000:'), Image('00000:99000:00900:00000:00000:'), Image('09000:09000:00900:00000:00000:'))
     ALL_ARROWS= (Image('00900:09990:90909:00900:00900:'), Image('00999:00099:00909:09000:90000:'), Image('00900:00090:99999:00090:00900:'), Image('90000:09000:00909:00099:00999:'), Image('00900:00900:90909:09990:00900:'), Image('00009:00090:90900:99000:99900:'), Image('00900:09000:99999:09000:00900:'), Image('99900:99000:90900:00090:00009:'))
+    
+    @staticmethod
     @overload   
-    def __init__(self, string: str) -> None:
+    def __init__(string: str) -> None:
         pass
+    @staticmethod
     @overload
-    def __init__(self, width: int, height: int) -> None:
+    def __init__(width: int, height: int) -> None:
         pass
+    @staticmethod
     @overload
-    def __init__(self, width: int, height: int, buffer: bytes) -> None:
+    def __init__(width: int, height: int, buffer: bytes) -> None:
         pass
 
     def width() -> int:
@@ -134,15 +140,19 @@ class BT_VCP:
         pass
     def close() -> None:
         pass
+    @staticmethod
     @overload
     def read() -> Optional[bytes]:
         pass
+    @staticmethod
     @overload
     def read(nbytes: int) -> Optional[bytes]:
         pass
+    @staticmethod
     @overload
     def readinto(buf) -> Optional[int]:
         pass
+    @staticmethod
     @overload
     def readinto(buf, maxlen: int) -> Optional[int]:
         pass
@@ -156,9 +166,11 @@ class BT_VCP:
         pass
     def send(data: Union[int, bytes], timeout=5000) -> int:
         pass
+    @staticmethod
     @overload
     def callback(function: Callable[[int], None]) -> None:
         pass
+    @staticmethod
     @overload
     def callback() -> Callable[[int], None]:
         pass
@@ -179,15 +191,19 @@ class USB_VCP:
         pass
     def close() -> None:
         pass
+    @staticmethod
     @overload
     def read() -> Optional[bytes]:
         pass
+    @staticmethod
     @overload
     def read(nbytes: int) -> Optional[bytes]:
         pass
+    @staticmethod
     @overload
     def readinto(buf) -> Optional[int]:
         pass
+    @staticmethod
     @overload
     def readinto(buf, maxlen: int) -> Optional[int]:
         pass

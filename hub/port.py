@@ -1,7 +1,7 @@
 from typing import Callable, Iterable, Optional, Tuple, Union, overload
 
 
-class _Port:
+class Port:
     class _Device:
         FORMAT_RAW= 0
         FORMAT_PCT= 1
@@ -9,15 +9,19 @@ class _Port:
 
         def get(format: Optional[int]) -> list:
             pass
+        @staticmethod
         @overload
         def mode(mode: int) -> None:
             pass
+        @staticmethod
         @overload
         def mode(mode: int, data: bytes) -> None:
             pass
+        @staticmethod
         @overload
         def mode(mode: Iterable[Tuple[int, int]]) -> None:
             pass
+        @staticmethod
         @overload
         def mode() -> Iterable[Tuple[int, int]]:
             pass
@@ -51,27 +55,35 @@ class _Port:
             pass
         def busy(type=0) -> bool:
             pass
+        @staticmethod
         @overload
         def run_at_speed(speed: int) -> None:
             pass
+        @staticmethod
         @overload
         def run_at_speed(speed: int, max_power: int, acceleration: int, deceleration: int, stall: bool) -> None:
             pass
+        @staticmethod
         @overload
         def run_for_time(msec: int) -> None:
             pass
+        @staticmethod
         @overload
         def run_for_time(msec: int, speed: int, max_power: int, stop: int, acceleration: int, deceleration: int, stall: bool) -> None:
             pass
+        @staticmethod
         @overload
         def run_for_degrees(degrees: int) -> None:
             pass
+        @staticmethod
         @overload
         def run_for_degrees(degrees: int, speed: int, max_power: int, stop: int, acceleration: int, deceleration: int, stall: bool) -> None:
             pass
+        @staticmethod
         @overload
         def run_to_position(position: int) -> None:
             pass
+        @staticmethod
         @overload
         def run_to_position(position: int, speed: int, max_power: int, stop: int, acceleration: int, deceleration: int, stall: bool) -> None:
             pass
@@ -79,15 +91,19 @@ class _Port:
             pass
         def callback(function: Callable[[int], None]) -> None:
             pass
+        @staticmethod
         @overload
         def pid() -> tuple:
             pass
+        @staticmethod
         @overload
         def pid(p: int, i: int, d: int) -> None:
             pass
+        @staticmethod
         @overload
         def default() -> dict:
             pass
+        @staticmethod
         @overload
         def default(speed: int, max_power: int, acceleration: int, deceleration: int, stop: int, pid: tuple, stall: bool, callback: Optional[Callable[[int], None]]) -> None:
             pass
@@ -150,15 +166,10 @@ class _Port:
             pass
     
 
-
-
-
-    
     device = _Device()
     motor = _Motor()
     p5 = _Pin()
     p6 = _Pin()
-
     def pwm(value: int) -> None:
         pass
     def callback(function: Callable[[int], None]) -> None:
@@ -174,12 +185,12 @@ class _Port:
     def write(write: bytes) -> int:
         pass
 
-A = _Port()
-B = _Port()
-C = _Port()
-D = _Port()
-E = _Port()
-F = _Port()   
+A = Port()
+B = Port()
+C = Port()
+D = Port()
+E = Port()
+F = Port()   
 
 DETACHED= 0
 ATTACHED= 1

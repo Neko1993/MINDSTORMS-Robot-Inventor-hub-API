@@ -7,12 +7,16 @@ def clear():
     pass
 def rotation(rotation: int) -> None:
     pass
+@overload
 def align() -> int:
     pass
+@overload
 def align(face: int) -> int:
     pass
+@overload
 def invert() -> bool:
     pass
+@overload
 def invert(invert: bool) -> bool:
     pass
 def callback(self, function: Callable[[int], None]) -> None:

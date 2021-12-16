@@ -1,4 +1,4 @@
-from typing import Callable, Iterable, Tuple, Union
+from typing import Callable, Iterable, Tuple, Union, overload
 
 class battery:
     BATTERY_NO_ERROR= 0
@@ -82,8 +82,10 @@ class display:
         pass
     def align(face: int) -> int:
         pass
+    @overload
     def invert() -> bool:
         pass
+    @overload
     def invert(invert: bool) -> bool:
         pass
     def callback(self, function: Callable[[int], None]) -> None:
